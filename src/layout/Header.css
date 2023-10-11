@@ -1,0 +1,41 @@
+.home-header{
+    height:100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-image: url("../assets/mvp-banner.png");
+   
+}
+
+.header-container{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0 0 0;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.header-container h1{
+    font-family: var(--header);
+    padding-bottom: 1em;
+   
+}
+.header-container h2{
+    font-size: 75px ;
+    font-weight: 400;
+    font-style: normal;
+    font-family: var(--paragraph);
+
+}
+
+.navlink-button{
+    background-color: var(--yellow);
+    text-decoration: none;
+    color: black;
+    padding: 0.5em 3em;
+    font-size: 18px;
+    font-family: var(--paragraph);
+    border-radius: 50px;
+}
