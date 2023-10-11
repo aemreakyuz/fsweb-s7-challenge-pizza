@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./Forms.css";
 import "./Checkbox.css";
+import "./TextInput.css";
+import * as Yup from "yup";
+import axios from "axios";
 
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import "./TextInput.css";
 
 export default function OrderForm(props) {
   const { productData } = props;
 
   //initial values
-
   const malzemeler = [
     "Pepperoni",
     "Domates",
@@ -40,9 +41,7 @@ export default function OrderForm(props) {
     totalprice: 0,
     amount: 1,
   };
-
   //dynamic datas
-
   const [formData, setFormData] = useState(initFormData);
 
   const [errors, setErrors] = useState({
@@ -50,6 +49,7 @@ export default function OrderForm(props) {
     hamur: "",
     ekstraMalzemeler: "",
   });
+  const [isValid, setIsValid] = useState(false);
 
   const [sayac, setSayac] = useState(1);
 
@@ -60,7 +60,6 @@ export default function OrderForm(props) {
   const [totalPrice, setTotalPrice] = useState(0);
 
   //helper functions
-
   const handleIncrement = () => {
     setSayac(sayac + 1);
   };
@@ -84,9 +83,24 @@ export default function OrderForm(props) {
     setFormData(newFormData);
   };
 
-  // useEffect(() => {
-  //   formSchema.isValid(formData).then((valid) => setIsValid(valid));
-  // }, [formData, extraOptions]);
+  //Yup
+
+  const formSchema = Yup.object().shape({
+    size: Yup.string()
+      .oneOf(["S", "M", "S"], "Bir pizza boyu seçmelisiniz.")
+      .required("Pizza boyu seçimi gereklidir."),
+    hamur: Yup.string()
+      .oneOf(
+        ["Süper İnce 5₺", "İnce 10₺", "Kalın 15₺"],
+        "Bir pizza hamur kalınlığı seçmelisiniz."
+      )
+      .required("Pizza hamuru seçimi gereklidir."),
+    extraOptions: Yup.array().max(10).of(Yup.string()),
+  });
+
+  useEffect(() => {
+    formSchema.isValid(formData).then((valid) => setIsValid(valid));
+  }, [formData, ekstraMalzemeler]);
 
   return (
     <div className="main-container">
@@ -201,7 +215,7 @@ export default function OrderForm(props) {
               </div>
             </div>
             <div className="">
-              <button className="" type="submit" /*disabled={!isValid}*/>
+              <button className="" type="submit" disabled={!isValid}>
                 SİPARİŞ VER
               </button>
             </div>

@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="middle-container">
-            <p>Hot Menu</p>
+            <h4>Hot Menu</h4>
             <p>Terminal Pizza</p>
             <p>5 Kişilik Hackathlon Pizza</p>
             <p>useEffect Tavuklu Pizza</p>
