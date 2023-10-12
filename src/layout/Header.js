@@ -9,7 +9,12 @@ const Header = () => {
         <h1>Teknolojik Yemekler</h1>
         <h4>fırsatı kaçırma</h4>
         <h2>KOD ACIKTIRIR PİZZA DOYURUR</h2>
-        <NavLink id="order-pizza" to="./pizza" className="navlink-button">
+        <NavLink
+          id="order-pizza"
+          to="./pizza"
+          className="navlink-button"
+          data-cy="order-pizza"
+        >
           ACIKTIM
         </NavLink>
       </header>

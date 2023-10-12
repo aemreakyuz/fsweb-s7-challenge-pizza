@@ -110,9 +110,9 @@ m...
 Çalışmanı gözden geçirmek, iyileştirmek ve değerlendirmek için zaman planlamanı ve yazım denetimi ve dilbilgisi denetimi de temel düzeltmeler yapmanı tavsiye ederiz. MVP'yi karşılayan bir challenge göndermek, yanlış sırayla yapılmış, karmaşıklaşmış ve ama çalışmayan bir proje göndermenden daha iyi olduğunu hatırlatmak isteriz.
 Cypress'le projenize şu testleri ekleyin:
 
-- [ ] inputa bir metin giren test
-- [ ] birden fazla malzeme seçilebilen bir test
-- [ ] formu gönderen bir test
+- [x] inputa bir metin giren test
+- [x] birden fazla malzeme seçilebilen bir test
+- [x] formu gönderen bir test
 
 Cypress kurulumu için `npm install cypress --save-dev` komutunu gir ve `npx cypress open` yaz. Bu, "Cypress 10'a Hoş Geldiniz!" başlığı ve altında "Cypress 10'a Devam Et" yazan buton içeren bir diyalog açacaktır. Bu butona tıkla, ardından bir sonraki ekranın en altına git ve arka arkaya üç geçiş butonuna tıkla (birini tıkladıktan sonra sonraki bölüm genişleyecek ve bir sonraki geçiş seçimini tıklamana izin verecek). Bir sonraki ekranda 'e2e''yi seç ve bir sonraki ekranda da 'Scaffold Example Specs' seçeneğini seçip, ardından istediğin bir tarayıcı ile 'E2E Testini Başlat' butonuna basarak, testleri çalıştırabilirsin.
 Tarayıcı açıldıktan sonra da, VSCode'da yeni oluşturduğun cypress klasöründe, e2e klasörüne git ve `pizza.cy.js` adlı yeni bir dosya oluştur. Artık testlerini yazmaya hazırsın! (Dosya isminde ".cy" olduğundan emin ol, aksi takdirde Cypress testlerini bulamaz!)
@@ -142,9 +142,9 @@ Zamanı verimli kullanmak için aşağıdaki sırayla geliştirme yapmanı tavsi
 
 MVP'yi bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki hedefler, bu modülde öğrendiklerinizin dışında şeyler de olabilir. Yine de MVP'de bitirdiğiniz yapı üzerine inşa edilecek. Kendine bunları yapmak için mutlaka zaman tanı, sınırlarını zorla ve aşağıdaki hedeflere ulaşıp ulaşamayacağına bak:
 
-- [ ] Tasarım güncellemesi: **Sipariş** sayfasında, sipariş özetini görüntüle.
-  - [ ] Axios ile API request denemelisin.
-  - [ ] [https://reqres.in/api/users](https://reqres.in) veya benzeri ücretsiz bir mock api servisine, `axios` ile POST ile kendi datanızı atıp, gelen mock datayı arayüze basabilirsin.
+- [x] Tasarım güncellemesi: **Sipariş** sayfasında, sipariş özetini görüntüle.
+  - [x] Axios ile API request denemelisin.
+  - [x] [https://reqres.in/api/users](https://reqres.in) veya benzeri ücretsiz bir mock api servisine, `axios` ile POST ile kendi datanızı atıp, gelen mock datayı arayüze basabilirsin.
   - [ ] Sipariş POST edilirken bir ağ hatası olasılığı için kullanıcıya geribildirim verebilmelisin (örnek: İnternet'e bağlanılamadı)
 - [ ] Tasarım Güncellemesi: **Anasayfa** çok daha çeşitli tasarım öğeleriyle zenginleştir.
 - [ ] Tasarım Güncellemesi: **Sipariş** Form elemanlarını (inputlar), özel renk ve tasarım diline göre güncelle

@@ -165,7 +165,12 @@ export default function OrderForm(props) {
 
   return (
     <div className="main-container">
-      <Form className="all-forms" id="pizza-form" onSubmit={handleSubmit}>
+      <Form
+        className="all-forms"
+        id="pizza-form"
+        onSubmit={handleSubmit}
+        data-cy="pizza-form"
+      >
         <div className="top-form">
           <div className="boyut">
             <h3>
@@ -180,6 +185,7 @@ export default function OrderForm(props) {
                     checked={formData.size === boyut}
                     name="size"
                     onChange={handleChange}
+                    data-cy="size-input"
                   />
                   {boyut}
                 </label>
@@ -198,6 +204,7 @@ export default function OrderForm(props) {
                 name="hamur"
                 value={formData.hamur}
                 onChange={handleChange}
+                data-cy="hamur-input"
               >
                 <option value="">--Hamur Kalınlığı Seçiniz--</option>
 
@@ -235,6 +242,7 @@ export default function OrderForm(props) {
                   value={malzeme}
                   checked={ekstraMalzemeler.includes(malzeme)}
                   onChange={handleEkstraMalzemeler}
+                  data-cy="malzeme-input"
                 />
                 <label className="container">
                   {malzeme}
@@ -258,6 +266,7 @@ export default function OrderForm(props) {
               type="text"
               name="isim"
               onChange={handleChange}
+              data-cy="name-input"
             />
           </FormGroup>
           {errors.isim && <p className="error">{errors.size}</p>}
@@ -275,6 +284,7 @@ export default function OrderForm(props) {
               type="text"
               name="note"
               onChange={handleChange}
+              data-cy="note-input"
             />
           </FormGroup>
 
@@ -310,6 +320,7 @@ export default function OrderForm(props) {
                 className=""
                 type="submit"
                 disabled={isValid}
+                data-cy="submit-button"
               >
                 SİPARİŞ VER
               </button>
