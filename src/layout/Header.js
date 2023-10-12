@@ -4,17 +4,16 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="home-header">
-      <div className="header-container">
+    <div className="home-container">
+      <header className="header-container">
         <h1>Teknolojik Yemekler</h1>
-        <div className="text-container">
-          <h2>KOD ACIKTIRIR PİZZA DOYURUR</h2>
-        </div>
-        <NavLink to="./pizza" className="navlink-button">
+        <h4>fırsatı kaçırma</h4>
+        <h2>KOD ACIKTIRIR PİZZA DOYURUR</h2>
+        <NavLink id="order-pizza" to="./pizza" className="navlink-button">
           ACIKTIM
         </NavLink>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 };
 

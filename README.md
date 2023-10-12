@@ -48,9 +48,9 @@ Proje iki zorluk aşamalı,
 
 ### Görev 1: Proje Kurulumu
 
-- [ ] Forklayarak bir kopya oluşturun
-- [ ] Forku klonlayın
-- [ ] Main branch üzerinde çalışın
+- [x] Forklayarak bir kopya oluşturun
+- [x] Forku klonlayın
+- [x] Main branch üzerinde çalışın
 - [ ] Comitinizi pushlayın: `git push origin main`
 - `axios`
 - `yup`
@@ -80,16 +80,16 @@ Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #
 
 MVP aşamasına getirdiğiniz (minimum viable product), aşağıdaki gereksinimlerin hepsini sağlamalıdır.
 
-- [ ] Route u "/" olan ve içinde hero alanındaki buton ile forma linklenen bir anasayfa. (button, nav bar, ya da herhangi bir link kabul edilebilir ama id'si "order-pizza" olmalı)
-- [ ] Route u "/pizza" olan bir sipariş formu
-- [ ] Id'si "pizza-form" olan bir form
-- [ ] Id'si "name-input" olan bir isim inputu
+- [x] Route u "/" olan ve içinde hero alanındaki buton ile forma linklenen bir anasayfa. (button, nav bar, ya da herhangi bir link kabul edilebilir ama id'si "order-pizza" olmalı)
+- [x] Route u "/pizza" olan bir sipariş formu
+- [x] Id'si "pizza-form" olan bir form
+- [x] Id'si "name-input" olan bir isim inputu
 - [ ] İsim için bir doğrulama(validation) ve hata mesajı (İsim en az 2 karakter olmalıdır)
-- [ ] Pizza boyutunun seçilebileceği "size-dropdown" id'li bir dropdown
-- [ ] Malzemeler için bir checklist(checkbox) - en az 4 adet (ipucu: name attributeları farklı olsun!)
-- [ ] Özel seçimler için bir text input "special-text" id'li
-- [ ] "order-button" id'li bir "Sipariş Ver" butonu. Bu buton tıklandığında form gönderilerek girilen bilgileri içerecek bir veritabanı kaydı oluşturulacak.
-- [ ] Sipariş özeti console'a yazdırılacak.
+- [x] Pizza boyutunun seçilebileceği "size-dropdown" id'li bir dropdown
+- [x] Malzemeler için bir checklist(checkbox) - en az 4 adet (ipucu: name attributeları farklı olsun!)
+- [x] Özel seçimler için bir text input "special-text" id'li
+- [x] "order-button" id'li bir "Sipariş Ver" butonu. Bu buton tıklandığında form gönderilerek girilen bilgileri içerecek bir veritabanı kaydı oluşturulacak.
+- [x] Sipariş özeti console'a yazdırılacak.
 
 Not - Form'un payloadu, veri **örnek olarak** şu şekilde olabilir. **Kendiniz de bu yapıyı değiştirebilirsiniz.**
 
@@ -170,16 +170,16 @@ MVP'yi bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki 
 | CSS flex becerisi ortalama ve hizalamalar doğru mu?                                       |          |
 | HTML yapısı anlamlı mı? Semantik tagler kullanılmış mı?                                   |          |
 | Projedeki MVP seviye tasarıma benzerlik (1-5)                                             |          |
-| ADV seviye Sipariş Onay sayfası uygulanmış mı?                                            | ADV    |
-| ADV seviye Sipariş Formu uygulanmış mı?                                                   | ADV    |
-| ADV seviye Anasayfa sayfası uygulanmış mı?                                                | ADV    |
-| ADV Seviye uyarlama kabiliyeti (1-5)                                                      | ADV    |
+| ADV seviye Sipariş Onay sayfası uygulanmış mı?                                            | ADV      |
+| ADV seviye Sipariş Formu uygulanmış mı?                                                   | ADV      |
+| ADV seviye Anasayfa sayfası uygulanmış mı?                                                | ADV      |
+| ADV Seviye uyarlama kabiliyeti (1-5)                                                      | ADV      |
 |                                                                                           |          |
 | React JS                                                                                  |          |
 | İçerik componentlere bölünmüş mü?                                                         |          |
 | Prop/export/import gibi React JS özellikleri kullanılmış mı?                              |          |
 | Kodda Türkçe karakter olmamasına dikkat edilmiş mi?                                       |          |
-| Temel paketler dışında ek bir paket kullanılmış mı? (Axios, Tailwind)                     | ADV    |
+| Temel paketler dışında ek bir paket kullanılmış mı? (Axios, Tailwind)                     | ADV      |
 | Genel React JS anlayışı (1-5)                                                             |          |
 |                                                                                           |          |
 | Routing                                                                                   |          |
@@ -206,12 +206,12 @@ MVP'yi bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki 
 | Veriler state'te tutuluyor mu?                                                            |          |
 | Tüm form değerleri state'e ekleniyor mu?                                                  |          |
 | Tekrar eden bileşenler için map kullanmış mı?                                             |          |
-| Kullandığı verileri, axios ve mock bir API'ye atıp, response'u kullanıyor mu?             | ADV    |
+| Kullandığı verileri, axios ve mock bir API'ye atıp, response'u kullanıyor mu?             | ADV      |
 |                                                                                           |          |
 | Cypress Testleri                                                                          |          |
 | Kaç test yazılmış? (min 3)                                                                |          |
 | Validation kuralları test ediliyor mu?                                                    |          |
 | Her alan test ediliyor mu?                                                                |          |
-| Anasayfa'dan başlayıp, başarılı sipariş gönderimine giden bir test var mı?                | ADV    |
+| Anasayfa'dan başlayıp, başarılı sipariş gönderimine giden bir test var mı?                | ADV      |
 |                                                                                           |          |
 | Soru-Cevap Sorular                                                                        |          |

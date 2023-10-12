@@ -1,0 +1,107 @@
+
+@import "../reset.css";
+
+.success-container {
+    background-color: var(--red);
+    color: white;
+    min-height:100vh;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+.double-space{
+    margin: 2rem 0;
+    border: none;
+}
+
+.separator{
+    color: white;
+    margin:2rem 0;
+   }
+
+.success-container h1{
+    font-family: var(--header);
+}
+
+.success-container h4 {
+    font-family: var(--span);
+    color: var(--yellow)
+}
+
+.success-container h2{
+    font-family: var(--paragraph);
+    font-style: none;
+    font-size: 4vw;
+}
+
+
+.order-container{
+    width:33vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.order-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+.order-info p.ek-malzeme {
+    align-self: flex-start;
+    display: flex;
+    justify-self: flex-start;
+  }
+.order-info span{
+    font-weight: 600;
+    
+}
+
+.order-summary{
+    display:flex;
+    flex-direction: column;
+    width:18vw;
+    align-self: center;
+}
+
+.order-summary h3{
+    font-size: 1.7vw;
+    width: 24vw;
+    align-self: center;
+}
+
+
+.order-price-container{
+    border: 1px solid white;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    line-height: 2em;
+    font-size: 1vw;
+    padding: 2rem 0
+}
+.order-price-container h3, .order-price-container h4, .order-price-container p {
+    font-family: var(--paragraph);
+    color:white;
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+
+
+.ekmalzemeler-price{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.total-price{
+    display: flex;
+    justify-content: space-evenly;
+}
