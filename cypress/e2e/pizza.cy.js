@@ -37,8 +37,7 @@ describe("Anasayfadan Siparişe", () => {
     cy.get("[data-cy=submit-button]")
       .click()
       .url()
-      .should("include", "success")
-      .visit("http://localhost:3000/success");
+      .should("include", "success");
+    cy.get(".order-container").contains("SİPARİŞ ALINDI");
   });
-  it("Sipariş Formunu gerekli validasyonlarla doldurma", () => {});
 });

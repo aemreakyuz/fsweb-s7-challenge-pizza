@@ -96,10 +96,7 @@ export default function OrderForm(props) {
     hamur: Yup.string()
       .oneOf(["İnce", "Orijinal", "Parmesan Kenar"])
       .required("Lütfen hamur kalınlığı seçiniz"),
-    ekstraMalzemeler: Yup.array()
-      .max(10)
-      .of(Yup.string())
-      .required("Lütfen malzeme seçiniz"),
+    ekstraMalzemeler: Yup.array().max(10).of(Yup.string()),
     isim: Yup.string()
       .min(2, "En az 2 karakter olmalıdır.")
       .required("İsim alanı zorunludur."),
