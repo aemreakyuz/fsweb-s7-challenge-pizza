@@ -1,7 +1,6 @@
 import React from "react";
 import "./SuccessPage.css";
 import "../reset.css";
-import { faAlignLeft } from "@fortawesome/free-solid-svg-icons";
 
 const SuccessPage = (props) => {
   const { order } = props;

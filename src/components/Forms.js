@@ -5,6 +5,8 @@ import "./Checkbox.css";
 import * as Yup from "yup";
 import axios from "axios";
 
+import { EkstraMalzemeler } from "../utils/EkstraMalzemeler.js";
+
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 export default function OrderForm(props) {
@@ -12,27 +14,12 @@ export default function OrderForm(props) {
   let history = useHistory();
 
   //initial values
-  const malzemeler = [
-    "Pepperoni",
-    "Domates",
-    "Biber",
-    "Sosis",
-    "Mısır",
-    "Siyah Zeytin",
-    "Kanada Jambonu",
-    "Sucuk",
-    "Ananas",
-    "Tavuk Izgara",
-    "Jalapeno",
-    "Kabak",
-    "Soğan",
-    "Sarımsak",
-  ];
 
   const boyutlar = ["S", "M", "L"];
   const hamurlar = ["İnce", "Orijinal", "Parmesan Kenar"];
 
   const initFormData = {
+    id: 1,
     title: "",
     size: "",
     hamur: "",
@@ -230,7 +217,7 @@ export default function OrderForm(props) {
           <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
         </div>
         <div className="checkbox-container">
-          {malzemeler.map((malzeme, index) => {
+          {EkstraMalzemeler.map((malzeme, index) => {
             return (
               <div className="input-container" key={index}>
                 <input

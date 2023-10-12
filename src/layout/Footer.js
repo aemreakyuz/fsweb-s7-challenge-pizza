@@ -43,12 +43,24 @@ const Footer = () => {
           <div className="right-container">
             <p>Instagram</p>
             <div className="img-container">
-              <img src={Insta1} alt="instagram" />
-              <img src={Insta2} alt="instagram" />
-              <img src={Insta3} alt="instagram" />
-              <img src={Insta4} alt="instagram" />
-              <img src={Insta5} alt="instagram" />
-              <img src={Insta6} alt="instagram" />
+              <li className="insta-list">
+                <img src={Insta1} alt="instagram" />
+              </li>
+              <li className="insta-list">
+                <img src={Insta2} alt="instagram" />
+              </li>
+              <li className="insta-list">
+                <img src={Insta3} alt="instagram" />
+              </li>
+              <li className="insta-list">
+                <img src={Insta4} alt="instagram" />
+              </li>
+              <li className="insta-list">
+                <img src={Insta5} alt="instagram" />
+              </li>
+              <li className="insta-list">
+                <img src={Insta6} alt="instagram" />
+              </li>
             </div>
           </div>
         </div>
