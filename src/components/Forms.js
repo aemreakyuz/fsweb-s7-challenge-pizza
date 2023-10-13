@@ -23,12 +23,12 @@ export default function OrderForm(props) {
     title: "",
     size: "",
     hamur: "",
+    isim: "",
     note: "",
     ekstraMalzemeler: "",
     ekstraMalzemelerFiyat: 0,
     totalPrice: 0,
     amount: 0,
-    isim: "",
   };
   // console.log(initFormData);
   //dynamic datas
@@ -62,7 +62,8 @@ export default function OrderForm(props) {
   };
 
   const handleEkstraMalzemeler = (event) => {
-    const secim = event.target.value;
+    const { value } = event.target;
+    const secim = value;
     if (ekstraMalzemeler.includes(secim)) {
       setEkstraMalzemeler(
         ekstraMalzemeler.filter((malzeme) => {
@@ -121,7 +122,11 @@ export default function OrderForm(props) {
         });
     }
     console.log("name:", name, "value:", value);
-    setFormData({ ...formData, ...productData, [name]: value });
+    setFormData({
+      ...formData,
+      ...productData,
+      [name]: value,
+    });
   };
 
   //validasyon
@@ -129,7 +134,7 @@ export default function OrderForm(props) {
   useEffect(() => {
     formSchema.isValid(formData).then((valid) => setIsValid(!valid));
     console.log(formData);
-  }, [formData, ekstraMalzemeler]);
+  }, [formData]);
 
   //submit
 

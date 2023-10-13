@@ -1,9 +1,8 @@
-import React from "react";
-import terminal from "../Assets/adv-aseets/food-1.png";
-import absolute from "../Assets/adv-aseets/food-2.png";
-import burger from "../Assets/adv-aseets/food-3.png";
+import terminal from "../assets/adv-aseets/food-1.png";
+import absolute from "../assets/adv-aseets/food-2.png";
+import burger from "../assets/adv-aseets/food-3.png";
 
-export const Menu = [
+export const menuData = [
   {
     id: 0,
     title: "Position Absolute Acı Pizza",
