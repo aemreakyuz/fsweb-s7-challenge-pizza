@@ -227,17 +227,18 @@ export default function OrderForm(props) {
           {EkstraMalzemeler.map((malzeme, index) => {
             return (
               <div className="input-container" key={index}>
-                <input
-                  type="checkbox"
-                  name="ekstraMalzemeler"
-                  value={malzeme}
-                  checked={ekstraMalzemeler.includes(malzeme)}
-                  onChange={handleEkstraMalzemeler}
-                  data-cy="malzeme-input"
-                />
-                <label className="container">
+                <label className="label-container">
+                  <input
+                    type="checkbox"
+                    name="ekstraMalzemeler"
+                    value={malzeme}
+                    checked={ekstraMalzemeler.includes(malzeme)}
+                    onChange={handleEkstraMalzemeler}
+                    data-cy="malzeme-input"
+                    className="checkbox-input"
+                  />
+                  <div className="checkmark"></div>
                   {malzeme}
-                  <span className="checkmark"></span>
                 </label>
               </div>
             );
