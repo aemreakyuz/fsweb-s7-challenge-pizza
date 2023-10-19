@@ -3,6 +3,7 @@ import OrderPage from "./pages/OrderPage";
 import Home from "./pages/Home";
 import SuccessPage from "./pages/SuccessPage";
 import { menuData } from "./utils/menuData";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Switch, Route } from "react-router-dom";
 
@@ -25,7 +26,7 @@ const App = (props) => {
         </Route>
         <Route path="/pizza">
           <OrderPage
-            productData={menuData[0]}
+            productData={menuData[1]}
             handleOrder={handleOrder}
             name="candidate"
           />

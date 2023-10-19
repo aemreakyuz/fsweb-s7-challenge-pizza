@@ -1,4 +1,5 @@
 import "./Product.css";
+import React from "react";
 
 const Product = (props) => {
   const { productData } = props;
@@ -23,11 +24,11 @@ const Product = (props) => {
           </div>
           <div className="all-info">
             <div className="price-container">
-              <p>{productData.price.toFixed(2)}₺</p>
+              <p>{productData.price}₺</p>
             </div>
             <div className="pizza-summary">
               <p>{productData.rate}</p>
-              <p>{productData.comment}</p>
+              <p>({productData.comment})</p>
             </div>
           </div>
           <div className="pizza-info">

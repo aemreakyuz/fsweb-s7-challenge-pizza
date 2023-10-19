@@ -3,6 +3,9 @@ import { useHistory } from "react-router-dom";
 import "./Forms.css";
 import * as Yup from "yup";
 import axios from "axios";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { EkstraMalzemeler } from "../utils/EkstraMalzemeler.js";
 
@@ -12,33 +15,54 @@ export default function OrderForm(props) {
   const { productData, handleOrder } = props;
   let history = useHistory();
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid, isDirty, dirtyFields },
+    setValue,
+  } = useForm({
+    defaultValues: {
+      id: 1,
+      title: "",
+      size: "",
+      hamur: "",
+      isim: "",
+      note: "",
+      ekstraMalzemeler: "",
+      ekstraMalzemelerFiyat: 0,
+      totalPrice: 0,
+      amount: 0,
+    },
+    mode: "onChange",
+  });
+
   //initial values
 
   const boyutlar = ["S", "M", "L"];
   const hamurlar = ["İnce", "Orijinal", "Parmesan Kenar"];
 
-  const initFormData = {
-    id: 1,
-    title: "",
-    size: "",
-    hamur: "",
-    isim: "",
-    note: "",
-    ekstraMalzemeler: "",
-    ekstraMalzemelerFiyat: 0,
-    totalPrice: 0,
-    amount: 0,
-  };
+  // const initFormData = {
+  //   id: 1,
+  //   title: "",
+  //   size: "",
+  //   hamur: "",
+  //   isim: "",
+  //   note: "",
+  //   ekstraMalzemeler: "",
+  //   ekstraMalzemelerFiyat: 0,
+  //   totalPrice: 0,
+  //   amount: 0,
+  // };
   // console.log(initFormData);
   //dynamic datas
-  const [formData, setFormData] = useState(initFormData);
+  // const [formData, setFormData] = useState(initFormData);
 
-  const [errors, setErrors] = useState({
-    size: "",
-    hamur: "",
-    ekstraMalzemeler: "",
-  });
-  const [isValid, setIsValid] = useState(false);
+  // const [errors, setErrors] = useState({
+  //   size: "",
+  //   hamur: "",
+  //   ekstraMalzemeler: "",
+  // });
+  // const [isValid, setIsValid] = useState(false);
 
   const [sayac, setSayac] = useState(1);
 
@@ -50,6 +74,83 @@ export default function OrderForm(props) {
 
   //helpers
 
+  //Yup
+
+  // const formSchema = Yup.object().shape({
+  //   size: Yup.string()
+  //     .oneOf(["S", "M", "L"])
+  //     .required("Lütfen pizza boyu seçiniz."),
+  //   hamur: Yup.string()
+  //     .oneOf(["İnce", "Orijinal", "Parmesan Kenar"])
+  //     .required("Lütfen hamur kalınlığı seçiniz"),
+  //   ekstraMalzemeler: Yup.array().max(10, "Maksimum 10 malzeme ekleyebilirsin"),
+  //   isim: Yup.string()
+  //     .min(2, "En az 2 karakter olmalıdır.")
+  //     .required("İsim alanı zorunludur."),
+  // });
+
+  //useEffect: formdata, price
+
+  // useEffect(() => {
+  //   setEkstraMalzemelerFiyat(ekstraMalzemeler.length * malzemeFiyat * sayac);
+  //   setTotalPrice(productData.price * sayac + ekstraMalzemelerFiyat);
+  //   const newFormData = {
+  //     ...formData,
+  //     ekstraMalzemeler: ekstraMalzemeler,
+  //     ekstraMalzemelerFiyat: ekstraMalzemelerFiyat,
+  //     amount: sayac,
+  //     totalPrice: totalPrice,
+  //   };
+  //   setFormData(newFormData);
+  // }, [ekstraMalzemeler, ekstraMalzemelerFiyat, sayac, totalPrice]);
+
+  //handleChange
+
+  // const handleChange = (event) => {
+  //   console.log("handleChange function called");
+  //   const { name, value, type, checked } = event.target;
+  //   //yup control
+  //   const newValue = type === "checkbox" ? checked : value;
+  //   if (name !== "note" && name !== "isim") {
+  //     Yup.reach(formSchema, name)
+  //       .validate(newValue)
+  //       .then((valid) => {
+  //         setErrors({ ...errors, [name]: "" });
+  //       })
+  //       .catch((err) => {
+  //         setErrors({ ...errors, [name]: err.errors[0] });
+  //       });
+  //   }
+  //   console.log("name:", name, "value:", value);
+  //   setFormData({
+  //     ...formData,
+  //     ...productData,
+  //     [name]: value,
+  //   });
+  // };
+
+  //validasyon
+
+  // useEffect(() => {
+  //   formSchema.isValid(formData).then((valid) => setIsValid(!valid));
+  //   console.log(formData);
+  // }, [formData]);
+
+  //submit
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   axios
+  //     .post("https://reqres.in/api/users", formData)
+  //     .then((res) => {
+  //       handleOrder(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.error(err.response.message);
+  //     });
+  //   setFormData(initFormData);
+  //   history.push("/success");
+  // };
   const handleDecrement = (e) => {
     e.preventDefault();
     if (sayac > 1) {
@@ -74,74 +175,33 @@ export default function OrderForm(props) {
     } else {
       setEkstraMalzemeler([...ekstraMalzemeler, secim]);
     }
+    console.log("Ekstra Malzemeler:", ekstraMalzemeler);
   };
 
-  //Yup
+  const onFormSubmit = (formData, e) => {
+    const { name, value, type, checked } = e.target;
+    console.log(formData);
 
-  const formSchema = Yup.object().shape({
-    size: Yup.string()
-      .oneOf(["S", "M", "L"])
-      .required("Lütfen pizza boyu seçiniz."),
-    hamur: Yup.string()
-      .oneOf(["İnce", "Orijinal", "Parmesan Kenar"])
-      .required("Lütfen hamur kalınlığı seçiniz"),
-    ekstraMalzemeler: Yup.array().max(10, "Maksimum 10 malzeme ekleyebilirsin"),
-    isim: Yup.string()
-      .min(2, "En az 2 karakter olmalıdır.")
-      .required("İsim alanı zorunludur."),
-  });
+    console.log("Ekstra Malzemeler: ");
 
-  //useEffect: formdata, price
+    const ekstraMalzemelerFiyat =
+      ekstraMalzemeler.length * malzemeFiyat * sayac;
 
-  useEffect(() => {
-    setEkstraMalzemelerFiyat(ekstraMalzemeler.length * malzemeFiyat * sayac);
-    setTotalPrice(productData.price * sayac + ekstraMalzemelerFiyat);
-    const newFormData = {
+    console.log("Ekstra Malzemeler Fiyat:", ekstraMalzemelerFiyat);
+
+    const totalPrice = productData.price * sayac + ekstraMalzemelerFiyat;
+    console.log("Total Price:", totalPrice);
+
+    formData = {
       ...formData,
       ekstraMalzemeler: ekstraMalzemeler,
       ekstraMalzemelerFiyat: ekstraMalzemelerFiyat,
       amount: sayac,
       totalPrice: totalPrice,
-    };
-    setFormData(newFormData);
-  }, [ekstraMalzemeler, ekstraMalzemelerFiyat, sayac, totalPrice]);
-
-  //handleChange
-
-  const handleChange = (event) => {
-    console.log("handleChange function called");
-    const { name, value, type, checked } = event.target;
-    //yup control
-    const newValue = type === "checkbox" ? checked : value;
-    if (name !== "note" && name !== "isim") {
-      Yup.reach(formSchema, name)
-        .validate(newValue)
-        .then((valid) => {
-          setErrors({ ...errors, [name]: "" });
-        })
-        .catch((err) => {
-          setErrors({ ...errors, [name]: err.errors[0] });
-        });
-    }
-    console.log("name:", name, "value:", value);
-    setFormData({
-      ...formData,
-      ...productData,
+      title: productData.title,
       [name]: value,
-    });
-  };
+    };
 
-  //validasyon
-
-  useEffect(() => {
-    formSchema.isValid(formData).then((valid) => setIsValid(!valid));
-    console.log(formData);
-  }, [formData]);
-
-  //submit
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
     axios
       .post("https://reqres.in/api/users", formData)
       .then((res) => {
@@ -150,16 +210,24 @@ export default function OrderForm(props) {
       .catch((err) => {
         console.error(err.response.message);
       });
-    setFormData(initFormData);
     history.push("/success");
+    toast.info("En kısa sürede sizinle iletişime geçeceğiz.", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   };
-
   return (
     <div className="main-container">
-      <Form
+      <form
         className="all-forms"
         id="pizza-form"
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onFormSubmit)}
         data-cy="pizza-form"
       >
         <div className="top-form">
@@ -170,42 +238,42 @@ export default function OrderForm(props) {
             <div className="all-radio">
               <div className="radio">
                 <input
+                  {...register("size", {
+                    required: true,
+                  })}
                   className="radio-input"
                   id="S"
                   type="radio"
                   value="S"
-                  checked={formData.size === "S"}
-                  name="size"
-                  onChange={handleChange}
                 />
                 <label data-cy="S" className="radio-label" htmlFor="S">
                   S
                 </label>
                 <input
+                  {...register("size", {
+                    required: true,
+                  })}
                   className="radio-input"
                   id="M"
                   type="radio"
                   value="M"
-                  checked={formData.size === "M"}
-                  name="size"
-                  onChange={handleChange}
                 />
                 <label data-cy="M" className="radio-label" htmlFor="M">
                   M
                 </label>
                 <input
+                  {...register("size", {
+                    required: true,
+                  })}
                   className="radio-input"
                   id="L"
                   type="radio"
                   value="L"
-                  checked={formData.size === "L"}
-                  name="size"
-                  onChange={handleChange}
                 />
                 <label data-cy="L" className="radio-label" htmlFor="L">
                   L
                 </label>
-                {errors.size && <p className="error">{errors.size}</p>}
+                {errors.name && <div> {errors.name.message} </div>}
               </div>
             </div>
           </div>
@@ -215,10 +283,11 @@ export default function OrderForm(props) {
             </h3>
             <div className="hamurlar">
               <select
+                {...register("hamur", {
+                  required: "Lütfen hamur kalınlığı seçiniz",
+                })}
                 id="hamur"
                 name="hamur"
-                value={formData.hamur}
-                onChange={handleChange}
                 data-cy="hamur-input"
                 className="hamur-input"
               >
@@ -239,9 +308,7 @@ export default function OrderForm(props) {
                   );
                 })}
               </select>
-              {errors.hamur.length > 0 && (
-                <p className="error">{errors.hamur} </p>
-              )}
+              {errors.hamur && <div> {errors.hamur.message} </div>}
             </div>
           </div>
         </div>
@@ -256,17 +323,23 @@ export default function OrderForm(props) {
               <div className="input-container" key={index}>
                 <label className="label-container">
                   <input
+                    {...register("ekstraMalzemeler", {
+                      max: 10,
+                    })}
                     type="checkbox"
-                    name="ekstraMalzemeler"
                     value={malzeme}
                     checked={ekstraMalzemeler.includes(malzeme)}
                     onChange={handleEkstraMalzemeler}
                     data-cy="malzeme-input"
                     className="checkbox-input"
                   />
+
                   <div className="checkmark"></div>
                   {malzeme}
                 </label>
+                {errors.ekstraMalzemeler && (
+                  <div>{errors.ekstraMalzemeler.message} </div>
+                )}
               </div>
             );
           })}
@@ -284,7 +357,6 @@ export default function OrderForm(props) {
               className="note"
               type="text"
               name="isim"
-              onChange={handleChange}
               data-cy="name-input"
             />
           </FormGroup>
@@ -302,7 +374,6 @@ export default function OrderForm(props) {
               placeholder="Siparişine eklemek istediğin bir not var mı?"
               type="text"
               name="note"
-              onChange={handleChange}
               data-cy="note-input"
             />
           </FormGroup>
@@ -335,7 +406,7 @@ export default function OrderForm(props) {
               <button
                 id="order-button"
                 type="submit"
-                disabled={isValid}
+                disabled={!isValid}
                 data-cy="submit-button"
               >
                 SİPARİŞ VER
@@ -343,7 +414,7 @@ export default function OrderForm(props) {
             </div>
           </div>
         </div>
-      </Form>
+      </form>
     </div>
   );
 }
