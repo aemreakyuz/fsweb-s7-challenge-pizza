@@ -1,24 +1,15 @@
+.img-area{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width:100%;
+}
 
-
-:root {
-    --header: 'Londrina Solid', cursive;
-    --paragraph: 'Barlow', serif;
-    --span: 'Satisfy', cursive;
-    --other: 'Quattrocento', serif;
-
+.top-width img{
+    object-fit: cover;
     
-    --yellow: #FDC913;
-    --light-gray: #5F5F5F;
-    --gray: #292929;
-    --red: #CE2829;
-    --beige: #FAF7F2;
-  }
-  
-  /* *{
-    border: 1px solid lime;
-    
-  } */
-  .order-header{
+}
+.order-header{
     font-family: var(--header);
     text-align: center;
     padding:0.5rem;
@@ -37,7 +28,7 @@
 
 
 .top-width{
-width:33%;
+min-width:33%;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
@@ -49,7 +40,7 @@ font-family: var(--paragraph);
 
 
 .history-section{
-    font-size:16px;
+    font-size:1rem;
     font-weight: 500;
 }
 
@@ -88,11 +79,3 @@ font-family: var(--paragraph);
     color: var(--light-gray);
 }
 
-
-
-.main-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1%;
-}

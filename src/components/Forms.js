@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Forms.css";
-import "./Checkbox.css";
 import * as Yup from "yup";
 import axios from "axios";
 
@@ -110,6 +109,7 @@ export default function OrderForm(props) {
   //handleChange
 
   const handleChange = (event) => {
+    console.log("handleChange function called");
     const { name, value, type, checked } = event.target;
     //yup control
     const newValue = type === "checkbox" ? checked : value;
@@ -123,7 +123,7 @@ export default function OrderForm(props) {
           setErrors({ ...errors, [name]: err.errors[0] });
         });
     }
-    console.log("name:", name, "value:", value, "checked", newValue);
+    console.log("name:", name, "value:", value);
     setFormData({
       ...formData,
       ...productData,
@@ -154,10 +154,6 @@ export default function OrderForm(props) {
     history.push("/success");
   };
 
-  const handleDropdown = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <div className="main-container">
       <Form
@@ -167,28 +163,52 @@ export default function OrderForm(props) {
         data-cy="pizza-form"
       >
         <div className="top-form">
-          <div className="boyut">
+          <div className="top-radio">
             <h3>
               Boyut Seç<span>*</span>
             </h3>
-            {boyutlar.map((boyut) => {
-              return (
-                <label key={boyut}>
-                  <input
-                    type="radio"
-                    value={boyut}
-                    checked={formData.size === boyut}
-                    name="size"
-                    onChange={handleChange}
-                    data-cy="size-input"
-                  />
-                  {boyut}
+            <div className="all-radio">
+              <div className="radio">
+                <input
+                  className="radio-input"
+                  id="S"
+                  type="radio"
+                  value="S"
+                  checked={formData.size === "S"}
+                  name="size"
+                  onChange={handleChange}
+                />
+                <label data-cy="S" className="radio-label" htmlFor="S">
+                  S
                 </label>
-              );
-            })}
-            {errors.size && <p className="error">{errors.size}</p>}
+                <input
+                  className="radio-input"
+                  id="M"
+                  type="radio"
+                  value="M"
+                  checked={formData.size === "M"}
+                  name="size"
+                  onChange={handleChange}
+                />
+                <label data-cy="M" className="radio-label" htmlFor="M">
+                  M
+                </label>
+                <input
+                  className="radio-input"
+                  id="L"
+                  type="radio"
+                  value="L"
+                  checked={formData.size === "L"}
+                  name="size"
+                  onChange={handleChange}
+                />
+                <label data-cy="L" className="radio-label" htmlFor="L">
+                  L
+                </label>
+                {errors.size && <p className="error">{errors.size}</p>}
+              </div>
+            </div>
           </div>
-
           <div className="dropdown-form">
             <h3>
               Hamur Seç<span>*</span>
@@ -226,8 +246,8 @@ export default function OrderForm(props) {
           </div>
         </div>
         <hr className="space" />
-        <div>
-          <h2>Ek Malzemeler</h2>
+        <div className="ek-malzemeler">
+          <h3>Ek Malzemeler</h3>
           <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
         </div>
         <div className="checkbox-container">
