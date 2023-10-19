@@ -43,11 +43,12 @@
   }
 
   .order-summary-container{
-    width:60%;
+    width:19rem;
+    
     background-color: var(--beige);
-   display: flex;
-   flex-direction: column;
-   font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
 
   }
 
@@ -88,7 +89,7 @@
     }
 
     .count-button {
-        width: 30%;
+        width: 8rem;
        display: flex;
        margin: 0;
     }
@@ -165,4 +166,56 @@
   }
   .checkbox-input:checked + .checkmark::after{
     display: block;
+}
+
+/*DROPDOWN*/
+
+.dropdown-form span, .boyut span{
+    color:var(--red)
+}
+.dropdown-form h3{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.dropdown-form{
+    display: flex;
+    flex-direction: column;
+    
+    width:50%
+}
+
+.dropdown-form option{
+    background-color: var(--light-gray);
+}
+
+
+select{
+    -webkit-appearance: none;
+    appearance: none;
+    outline:0;
+    cursor: pointer;
+    padding: 1rem;
+    padding-right: 2.5rem;
+    color: var(--gray);
+    font-size: 1rem;
+    background-image: url("../assets/adv-aseets/icons/caret-down.svg");
+    background-size: 1.75rem;
+    background-repeat: no-repeat;
+    background-position: center right;
+    border-radius: 0.5rem;
+    background-color: #FAF7F2;
+}
+
+
+select:active,
+select:focus,
+select:hover {
+    background-color: #dfdcd7;
+}
+
+
+/*RADIO*/
+.boyut{
+    width: 50%;
 }

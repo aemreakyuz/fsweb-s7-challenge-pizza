@@ -154,6 +154,10 @@ export default function OrderForm(props) {
     history.push("/success");
   };
 
+  const handleDropdown = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="main-container">
       <Form
@@ -196,8 +200,11 @@ export default function OrderForm(props) {
                 value={formData.hamur}
                 onChange={handleChange}
                 data-cy="hamur-input"
+                className="hamur-input"
               >
-                <option value="">--Hamur Kalınlığı Seçiniz--</option>
+                <option className="hamur-option" value="">
+                  --Hamur Kalınlığı Seçiniz--
+                </option>
 
                 {hamurlar.map((hamur, index) => {
                   return (

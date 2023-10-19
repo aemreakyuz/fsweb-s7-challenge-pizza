@@ -38,6 +38,7 @@
 .left-container h3{
     font-family: var(--header);
     font-size: 2rem;
+    width:min-content;
 }
 
 

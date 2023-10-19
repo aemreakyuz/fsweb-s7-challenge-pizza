@@ -11,15 +11,20 @@ import Insta5 from "../assets/adv-aseets/insta/li-4.png";
 import Insta6 from "../assets/adv-aseets/insta/li-5.png";
 import twitterLogo from "../assets/adv-aseets/icons/twitter-logo.png";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Footer = () => {
+  const history = useHistory();
+  const goHome = () => {
+    history.push("./");
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-content">
           <div className="left-container">
-            <h3>
+            <h3 onClick={goHome} className="cursor-pointer">
               Teknolojik <br />
               Yemekler
             </h3>
@@ -30,7 +35,16 @@ const Footer = () => {
               </div>
               <div className="mail">
                 <img src={mailIcon} alt="mail" />
-                <p> aciktim@teknolojikyemekler.com</p>
+                <p>
+                  {" "}
+                  aciktim
+                  <wbr />
+                  @teknolojik
+                  <wbr />
+                  yemekler
+                  <wbr />
+                  .com
+                </p>
               </div>
               <div className="phone">
                 <img src={phoneIcon} alt="phone" />
@@ -43,12 +57,12 @@ const Footer = () => {
               <h4>Hot Menu</h4>
             </div>
             <div className="menu-links">
-              <Link>Terminal Pizza</Link>
-              <Link>5 Kişilik Hackathlon Pizza</Link>
-              <Link>useEffect Tavuklu Pizza</Link>
-              <Link>Beyaz Console Frosty</Link>
-              <Link>Testler Geçti Mutlu Burger</Link>
-              <Link>Position Absolute Acı Burger</Link>
+              <Link to="./">Terminal Pizza</Link>
+              <Link to="./">5 Kişilik Hackathlon Pizza</Link>
+              <Link to="./">useEffect Tavuklu Pizza</Link>
+              <Link to="./">Beyaz Console Frosty</Link>
+              <Link to="./">Testler Geçti Mutlu Burger</Link>
+              <Link to="./">Position Absolute Acı Burger</Link>
             </div>
           </div>
           <div className="right-container">
