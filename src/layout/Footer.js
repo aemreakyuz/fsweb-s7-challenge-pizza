@@ -9,39 +9,52 @@ import Insta3 from "../assets/adv-aseets/insta/li-2.png";
 import Insta4 from "../assets/adv-aseets/insta/li-3.png";
 import Insta5 from "../assets/adv-aseets/insta/li-4.png";
 import Insta6 from "../assets/adv-aseets/insta/li-5.png";
+import twitterLogo from "../assets/adv-aseets/icons/twitter-logo.png";
+
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <>
-      <footer>
-        <div className="footer-container">
+    <footer>
+      <div className="footer-container">
+        <div className="footer-content">
           <div className="left-container">
-            <h3>Teknolojik Yemekler</h3>
-            <br></br>
-            <div>
-              <img src={locationIcon} alt="location" />
-              <p> 341 Londonderry Road, İstanbul Türkiye</p>
-            </div>
-            <div>
-              <img src={mailIcon} alt="mail" />
-              <p> aciktim@teknolojikyemekler.com</p>
-            </div>
-            <div>
-              <img src={phoneIcon} alt="phone" />
-              <p> +90 216 123 45 67</p>
-            </div>
+            <h3>
+              Teknolojik <br />
+              Yemekler
+            </h3>
+            <address>
+              <div className="location">
+                <img src={locationIcon} alt="location" />
+                <p> 341 Londonderry Road, İstanbul Türkiye</p>
+              </div>
+              <div className="mail">
+                <img src={mailIcon} alt="mail" />
+                <p> aciktim@teknolojikyemekler.com</p>
+              </div>
+              <div className="phone">
+                <img src={phoneIcon} alt="phone" />
+                <p> +90 216 123 45 67</p>
+              </div>
+            </address>
           </div>
           <div className="middle-container">
-            <h4>Hot Menu</h4>
-            <p>Terminal Pizza</p>
-            <p>5 Kişilik Hackathlon Pizza</p>
-            <p>useEffect Tavuklu Pizza</p>
-            <p>Beyaz Console Frosty</p>
-            <p>Testler Geçti Mutlu Burger</p>
-            <p>Position Absolute Acı Burger</p>
+            <div className="middle-header">
+              <h4>Hot Menu</h4>
+            </div>
+            <div className="menu-links">
+              <Link>Terminal Pizza</Link>
+              <Link>5 Kişilik Hackathlon Pizza</Link>
+              <Link>useEffect Tavuklu Pizza</Link>
+              <Link>Beyaz Console Frosty</Link>
+              <Link>Testler Geçti Mutlu Burger</Link>
+              <Link>Position Absolute Acı Burger</Link>
+            </div>
           </div>
           <div className="right-container">
-            <p>Instagram</p>
+            <div className="right-header">
+              <h4>Instagram</h4>
+            </div>
             <div className="img-container">
               <li className="insta-list">
                 <img src={Insta1} alt="instagram" />
@@ -64,11 +77,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </footer>
-      <div className="copyright">
-        <p>Copyright</p>
       </div>
-    </>
+
+      <div className="copyright">
+        <div>©2023 Teknolojik Yemekler.</div>
+        <img src={twitterLogo} alt="twitter" />
+      </div>
+    </footer>
   );
 };
 

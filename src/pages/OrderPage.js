@@ -14,11 +14,17 @@ export default function OrderPage(props) {
       </header>
       <div className="top-section">
         <div className="top-width">
-          <img src={banner} alt="pizza" />
-          <div className="history-section">
-            AnaSayfa - Seçenekler - <span>Sipariş Oluştur</span>
+          <div className="img-area">
+            <img src={banner} alt="pizza" />
           </div>
-          <h2>Position Absolute Acı Pizza</h2>
+          <div className="history-section">
+            <p>
+              AnaSayfa - Seçenekler - <span>Sipariş Oluştur</span>
+            </p>
+          </div>
+          <div>
+            <h2>Position Absolute Acı Pizza</h2>
+          </div>
           <div className="all-info">
             <div className="price-container">
               <p>85.50₺</p>

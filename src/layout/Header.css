@@ -7,7 +7,7 @@
     background-image: url("../assets/mvp-banner.png");
     background-size: 100vw 100vh ;
     background-repeat: no-repeat;
-   min-height: 100vh;
+    min-height: 100vh;
 }
 
 .header-container{
@@ -15,7 +15,7 @@
     min-height:30vh;
     display: flex;
     flex-direction: column;
-    padding: 1% 0 0 0;
+    padding: 1rem 0 0 0;
     align-items: center;
     justify-content: flex-start;
     text-align: center;
@@ -27,7 +27,7 @@
     padding-bottom: 1em;
 }
 .header-container h2{
-    font-size: 4vw ;
+    font-size: 4rem ;
     font-weight: 400;
     font-style: normal;
     font-family: var(--paragraph);
@@ -45,7 +45,7 @@
     background-color: var(--yellow);
     text-decoration: none;
     color: black;
-    padding: 0.5em 3em;
+    padding: 0.5rem 3rem;
     font-size: 18px;
     font-family: var(--paragraph);
     border-radius: 50px;

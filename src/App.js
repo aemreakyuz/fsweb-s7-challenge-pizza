@@ -24,7 +24,11 @@ const App = (props) => {
           <Home />
         </Route>
         <Route path="/pizza">
-          <OrderPage productData={menuData[0]} handleOrder={handleOrder} />
+          <OrderPage
+            productData={menuData[0]}
+            handleOrder={handleOrder}
+            name="candidate"
+          />
         </Route>
         <Route path="/success">
           <SuccessPage order={order} />

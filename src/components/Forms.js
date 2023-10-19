@@ -84,7 +84,7 @@ export default function OrderForm(props) {
     hamur: Yup.string()
       .oneOf(["İnce", "Orijinal", "Parmesan Kenar"])
       .required("Lütfen hamur kalınlığı seçiniz"),
-    ekstraMalzemeler: Yup.array().max(10).of(Yup.string()),
+    ekstraMalzemeler: Yup.array().max(10, "Maksimum 10 malzeme ekleyebilirsin"),
     isim: Yup.string()
       .min(2, "En az 2 karakter olmalıdır.")
       .required("İsim alanı zorunludur."),
@@ -108,12 +108,12 @@ export default function OrderForm(props) {
   //handleChange
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
     //yup control
-
+    const newValue = type === "checkbox" ? checked : value;
     if (name !== "note" && name !== "isim") {
       Yup.reach(formSchema, name)
-        .validate(value)
+        .validate(newValue)
         .then((valid) => {
           setErrors({ ...errors, [name]: "" });
         })
@@ -121,7 +121,7 @@ export default function OrderForm(props) {
           setErrors({ ...errors, [name]: err.errors[0] });
         });
     }
-    console.log("name:", name, "value:", value);
+    console.log("name:", name, "value:", value, "checked", newValue);
     setFormData({
       ...formData,
       ...productData,
