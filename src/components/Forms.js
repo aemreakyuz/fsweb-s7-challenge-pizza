@@ -291,19 +291,19 @@ export default function OrderForm(props) {
               +
             </Button>
           </div>
-          <div className="">
-            <div className="">
+          <div className="order-summary-container">
+            <div className="summary-container">
               <h3>Sipariş Toplamı</h3>
-              <div className="">
+              <div className="options-container">
                 <h4>Seçimler</h4>
                 <p>{ekstraMalzemelerFiyat}₺</p>
               </div>
-              <div className="">
+              <div className="total-price-container">
                 <h4>Toplam</h4>
                 <p>{totalPrice}₺</p>
               </div>
             </div>
-            <div className="">
+            <div className="order-button">
               <button
                 id="order-button"
                 className=""
