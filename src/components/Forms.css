@@ -43,7 +43,7 @@
   }
 
   .order-summary-container{
-    width:70%;
+    width:60%;
     background-color: var(--beige);
    display: flex;
    flex-direction: column;
@@ -86,3 +86,34 @@
         background-color: var(--yellow);
         border: none;
     }
+
+    .count-button {
+        width: 30%;
+       display: flex;
+       margin: 0;
+    }
+
+  .count-button button {
+    border: none;
+    background-color: var(--beige);
+    height: 3rem;
+    border:none;
+  }
+
+.decrease{
+    flex-grow: 1;
+    
+}
+.increase{
+    flex-grow: 1;
+}
+ 
+.sayac{
+    flex-grow: 1;
+    background-color: var(--beige);
+    text-align: center;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

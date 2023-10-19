@@ -51,13 +51,15 @@ export default function OrderForm(props) {
 
   //helpers
 
-  const handleDecrement = () => {
+  const handleDecrement = (e) => {
+    e.preventDefault();
     if (sayac > 1) {
       setSayac(sayac - 1);
     }
   };
 
-  const handleIncrement = () => {
+  const handleIncrement = (e) => {
+    e.preventDefault();
     setSayac(sayac + 1);
   };
 
@@ -280,16 +282,14 @@ export default function OrderForm(props) {
           <hr className="separator" />
         </div>
         <div className="bottom-form">
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Button className="btn-1" onClick={handleDecrement}>
+          <div className="count-button">
+            <button className="decrease" onClick={handleDecrement}>
               -
-            </Button>
-            <div className="sayac-3" style={{ fontSize: "32px" }}>
-              {sayac}
-            </div>
-            <Button className="btn-2" onClick={handleIncrement}>
+            </button>
+            <div className="sayac">{sayac}</div>
+            <button className="increase" onClick={handleIncrement}>
               +
-            </Button>
+            </button>
           </div>
           <div className="order-summary-container">
             <div className="summary-container">
@@ -306,7 +306,6 @@ export default function OrderForm(props) {
             <div className="order-button">
               <button
                 id="order-button"
-                className=""
                 type="submit"
                 disabled={isValid}
                 data-cy="submit-button"
