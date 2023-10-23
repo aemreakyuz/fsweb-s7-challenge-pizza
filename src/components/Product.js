@@ -1,5 +1,5 @@
 import "./Product.css";
-
+import React from "react";
 const Product = (props) => {
   const { productData } = props;
 
