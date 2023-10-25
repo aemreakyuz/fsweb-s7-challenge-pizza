@@ -109,7 +109,6 @@ export default function OrderForm(props) {
   //handleChange
 
   const handleChange = (event) => {
-    console.log("handleChange function called");
     const { name, value, type, checked } = event.target;
     //yup control
     const newValue = type === "checkbox" ? checked : value;

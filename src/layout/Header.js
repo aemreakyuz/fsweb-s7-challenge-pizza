@@ -11,7 +11,7 @@ const Header = () => {
         <h2>KOD ACIKTIRIR PİZZA DOYURUR</h2>
         <NavLink
           id="order-pizza"
-          to="./pizza"
+          to="./order"
           className="navlink-button"
           data-cy="order-pizza"
         >

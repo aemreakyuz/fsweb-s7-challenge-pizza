@@ -19,11 +19,15 @@ const SuccessPage = (props) => {
           <div className="space" />
           <div className="order-info">
             <p>
+              Adet: <span> {order ? order.amount : "Sipariş Bulunamadı"}</span>
+            </p>
+            <p>
               Boyut: <span>{order ? order.size : "Sipariş Bulunamadı"}</span>
             </p>
             <p>
               Hamur: <span> {order ? order.hamur : "Sipariş Bulunamadı"}</span>
             </p>
+
             <p className="ek-malzeme">
               Ek Malzemeler:
               <span>
