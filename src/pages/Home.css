@@ -1,0 +1,58 @@
+@import '../hasTailwind.css';
+
+.home {
+    background-image: url('../assets/mvp-banner.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    
+    min-height: 60vh;
+}
+
+.home h1 {
+    margin-top: 0;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+.home h3 {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.home h2 {
+    margin-top: 0;
+    font-size: 3rem;
+    font-weight: 100;
+    letter-spacing: -1px;
+    line-height: 1.25;
+}
+
+.orderPage-button {
+    font-weight: 700;
+    border-radius: 15px;
+    height: 3rem;
+    width: 10rem;
+    border-width: 0;
+}
+
+.nav-container {
+    width: 80%;
+    min-height: 10vh;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: #292929;
+    font-family: 'Quattrocento', serif;
+    font-weight: 400;
+}
+
+.nav-link img {
+    width: 32px;
+    height: 32px;
+}

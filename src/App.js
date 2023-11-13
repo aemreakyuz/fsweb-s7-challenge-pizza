@@ -15,8 +15,9 @@ const App = (props) => {
     setOrder(order);
   };
 
-  const selectedProduct = (product) => {
-    setProduct(product);
+  const selectedProduct = (id) => {
+    const matchedProduct = menuData.find((product) => product.id === id);
+    setProduct(matchedProduct);
     history.push("/order");
   };
 
@@ -25,14 +26,14 @@ const App = (props) => {
   }, [order]);
 
   return (
-    <>
+    <div className="min-w-screen">
       <Switch>
         <Route exact path="/">
           <Home productData={menuData} selectedProduct={selectedProduct} />
         </Route>
         <Route path="/order">
           <OrderPage
-            productData={menuData[0]}
+            productData={product}
             handleOrder={handleOrder}
             name="candidate"
           />
@@ -41,7 +42,7 @@ const App = (props) => {
           <SuccessPage order={order} />
         </Route>
       </Switch>
-    </>
+    </div>
   );
 };
 export default App;

@@ -7,7 +7,7 @@ import Product from "../components/Product";
 
 export default function OrderPage(props) {
   const { productData, handleOrder } = props;
-
+  console.log(productData);
   return (
     <>
       <Product productData={productData}></Product>

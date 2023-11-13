@@ -31,7 +31,7 @@ const SuccessPage = (props) => {
             <p className="ek-malzeme">
               Ek Malzemeler:
               <span>
-                {order
+                {order && order.ekstraMalzemeler
                   ? order.ekstraMalzemeler.join(", ")
                   : "Sipariş Bulunamadı"}
               </span>
