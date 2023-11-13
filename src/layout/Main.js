@@ -16,7 +16,7 @@ export default function Main(props) {
   console.log("Main", productData);
   return (
     <div className="margin-0-auto flex column justify-content-center align-items-center gap-5 bg-color-beige main-content">
-      <div className=" flex gap-2 font-Quattrocento headline">
+      <div className=" flex gap-2 font-Quattrocento headline overflow-hidden">
         <div className="flex column gap-2 flex-grow-1">
           <div className="flex column gap-1 flex-grow-1 color-white align-items-flex-start justify-content-flex-start popular-product">
             <h2>
@@ -56,16 +56,16 @@ export default function Main(props) {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap column justify-center items-center gap-2">
+      <div className="flex column justify-center items-center gap-2 ">
         <div className="mid-headers">
-          <h3 className="text-align-center font-Satisfy color-red">
+          <h3 id="menu" className="text-align-center font-Satisfy color-red">
             <span>en çok paketlenen menüler</span>
           </h3>
           <h3 className="text-align-center font-Barlow">
             Acıktıran Kodlara Doyuran Lezzetler
           </h3>
         </div>
-        <div className="flex justify-content-space-e gap-1">
+        <div className="flex flex-wrap  justify-content-space-e gap-1">
           <button className="flex justify-content-center align-items-center gap-1 bg-color-white font-Barlow color-dark-gray nav-button-container">
             <img src={ramen} alt="Ramen" /> Ramen
           </button>
@@ -85,7 +85,7 @@ export default function Main(props) {
             <img src={drinks} alt="Soft drinks" /> Soft drinks
           </button>
         </div>
-        <div className="flex gap-5">
+        <div className="flex flex-wrap w-[100%] gap-5 justify-center ">
           {productData.map((item, index) => {
             return (
               <ProductCard
