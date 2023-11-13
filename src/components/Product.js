@@ -1,9 +1,5 @@
 import "./Product.css";
 import React from "react";
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/main
 const Product = (props) => {
   const { productData } = props;
 
