@@ -17,7 +17,7 @@ import drinks from "../assets/adv-aseets/icons/6.svg";
 const Home = (props) => {
   const { selectedProduct, productData } = props;
   const goToFoodArea = () => {
-    const goToFoodNav = document.getElementById("foodNav");
+    const goToFoodNav = document.getElementById("menu");
     goToFoodNav.scrollIntoView({ behavior: "smooth" });
   };
   return (

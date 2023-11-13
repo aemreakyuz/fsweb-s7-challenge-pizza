@@ -1,0 +1,108 @@
+@import '../hasTailwind.css';
+
+.main-content {
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.headline {
+    width: 80%;
+    height: 500px;
+}
+
+
+.popular-product {
+    padding-left: 3rem;
+    padding-top: 3rem;
+    background-image: url('../assets/adv-aseets/kart-1.png');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.popular-product h2 {
+    font-size: 4rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin:0;
+}
+
+.popular-product h3 {
+    font-size: 1.1rem;
+    margin:0;
+}
+
+.popular-menu {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    background-image: url('../assets/adv-aseets/kart-2.png');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.popular-menu h3 {
+    color: white;
+    font-size: 2rem;
+    line-height: 1.1;
+    margin:0;
+}
+
+.carrier-commercial {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    background-image: url('../assets/adv-aseets/kart-3.png');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.carrier-commercial h3 {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin:0;
+}
+
+.order-button {
+    border-radius: 25px;
+    border-width: 0;
+    padding: 0 20px;
+    height: 45px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+h3 span {
+    font-size: 2rem;
+    font-weight: 400;
+    margin:0;
+    
+}
+
+.mid-headers h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin:0;
+}
+
+.nav-button-container {
+    font-weight: 700;
+    width: 10rem;
+    border-radius: 15px;
+    border-width: 0;
+    padding: 1rem;
+}
+
+.nav-button-container:hover {
+    background-color: #292929;
+    color: white
+}
+.nav-button-container img {
+    width: 32px;
+    height: 32px;
+}
+
