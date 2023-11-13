@@ -9,13 +9,14 @@ const Header = () => {
         <h1>Teknolojik Yemekler</h1>
         <h4>fırsatı kaçırma</h4>
         <h2>KOD ACIKTIRIR PİZZA DOYURUR</h2>
-        <button
+        <NavLink
           id="order-pizza"
+          to="./pizza"
           className="navlink-button"
           data-cy="order-pizza"
         >
           ACIKTIM
-        </button>
+        </NavLink>
       </header>
     </div>
   );
