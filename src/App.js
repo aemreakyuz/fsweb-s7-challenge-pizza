@@ -3,7 +3,7 @@ import OrderPage from "./pages/OrderPage";
 import Home from "./pages/Home";
 import SuccessPage from "./pages/SuccessPage";
 import { menuData } from "./utils/menuData";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
 
 const App = (props) => {
@@ -15,10 +15,10 @@ const App = (props) => {
     setOrder(order);
   };
 
-  const selectedProduct = (id) => {
-    const matchedProduct = menuData.find((product) => product.id === id);
-    setProduct(matchedProduct);
-    history.push("/order");
+  const selectedProduct = (product, id) => {
+    setProduct(product);
+    id = product.id;
+    history.push(`/order/${id}`);
   };
 
   useEffect(() => {
@@ -31,8 +31,9 @@ const App = (props) => {
         <Route exact path="/">
           <Home productData={menuData} selectedProduct={selectedProduct} />
         </Route>
-        <Route path="/order">
+        <Route path="/order/:id">
           <OrderPage
+            setProduct={setProduct}
             productData={product}
             handleOrder={handleOrder}
             name="candidate"

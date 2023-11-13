@@ -5,7 +5,6 @@ function ProductCard(props) {
   const { item, selectedProduct } = props;
   return (
     <div
-      id="menu"
       className="flex column gap-1 cursor-pointer font-Barlow bg-color-white food mt-4"
       onClick={() => selectedProduct(item)}
     >
