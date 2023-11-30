@@ -7,6 +7,9 @@ import { useParams } from "react-router-dom";
 import { menuData } from "../utils/menuData";
 
 export default function OrderPage(props) {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
   const { productData, setProduct, handleOrder } = props;
   console.log(productData);
   const { id } = useParams();

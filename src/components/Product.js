@@ -6,7 +6,9 @@ const Product = (props) => {
   return (
     <>
       <header className="order-header">
-        <h1>Teknolojik Yemekler</h1>
+        <a href="/" className="order-header">
+          <h1>Teknolojik Yemekler</h1>
+        </a>
       </header>
       <div className="top-section">
         <div className="top-width">

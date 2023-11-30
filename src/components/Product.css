@@ -1,81 +1,72 @@
-.img-area{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    width:100%;
+.img-area {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
 }
 
-.top-width img{
-    object-fit: cover;
-    
+.top-width img {
+  object-fit: cover;
 }
-.order-header{
-    font-family: var(--header);
-    text-align: center;
-    padding:0.5rem;
-    height: 12%;
-    font-weight: 400;
-    background-color: var(--red);
-    color:white;
-   
-  }
-.top-section{
-    background-color: var(--beige);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+.order-header {
+  font-family: var(--header);
+  text-align: center;
+  font-weight: 400;
+  background-color: var(--red);
+  color: white;
+  text-decoration: none;
+}
+.top-section {
+  background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.top-width{
-min-width:33%;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: flex-end;
-gap:2rem;
-line-height: 1.5;
-font-family: var(--paragraph);
+.top-width {
+  min-width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 2rem;
+  line-height: 1.5;
+  font-family: var(--paragraph);
 }
 
-
-.history-section{
-    font-size:1rem;
-    font-weight: 500;
+.history-section {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.history-section span{
-    color: var(--red)
+.history-section span {
+  color: var(--red);
 }
 
-.all-info{
-    display: flex;
-    justify-content: space-between ;
-    align-items: center;
-    align-content: center;
-    width: 100%;
-
+.all-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
 }
 
-.pizza-summary{
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-    width: 30%;
-    color: var(--light-gray)
-   
+.pizza-summary {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 30%;
+  color: var(--light-gray);
 }
 
-
-.price-container{
-    display: flex;
-    flex-direction: column;
-    font-size: 28px;
-    font-weight: 700;
+.price-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  font-weight: 700;
 }
 
-.pizza-info{
-    display: flex;
-    color: var(--light-gray);
+.pizza-info {
+  display: flex;
+  color: var(--light-gray);
 }
-

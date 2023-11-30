@@ -8,7 +8,9 @@ const SuccessPage = (props) => {
   return (
     <div className="success-container">
       <div className="order-container">
-        <h1>Teknolojik Yemekler</h1>
+        <a href="/" className="order-header">
+          <h1>Teknolojik Yemekler</h1>
+        </a>
         <hr className="space" />
         <h4>lezzetin yolda</h4>
         <h2>{order ? "SİPARİŞ ALINDI" : "SİPARİŞ BULUNAMADI"}</h2>
